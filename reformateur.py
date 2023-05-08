@@ -1,0 +1,18 @@
+def reformater(message):
+    message = message.replace("Ã©","é")
+    message = message.replace("â€™","'")
+    message = message.replace("Ã","à")
+    message = message.replace("à¨","è")
+    message = message.replace("(image AGD)",".")
+    message = message.replace("(Infographie AGD/R.S)",".")
+    message = message.replace("(image AGD/F.A)",".")
+    message = message.replace("(image DR)",".")
+    message = message.replace("(image AGD/P.S)",".")
+    message = message.replace("(image AGD/S.A)",".")
+    message = message.replace("(image AGD/J.A)",".")
+    message = message.replace("(image Kokou A.)",".")
+    message = message.replace("(Infographie AGD/R.S/ Source des données: DSID)",".")
+    message = message.replace("(image AGD/A.E)",".")
+    message = message.replace("(image: pixabay)",".")
+    message = message.replace("(image AGD/¨P.S)",".")
+    return message

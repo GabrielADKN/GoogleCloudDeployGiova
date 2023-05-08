@@ -1,0 +1,85 @@
+{
+    "intents": [
+        {
+            "tag": "nom",
+            "patterns": [
+                "t'appelles-tu",
+                "ton nom",
+                "nommmes-tu"
+            ],
+            "responses": [
+                "Je suis Giova, votre assistant virtuel. Que désirez-vous savoir sur l'agriculture en Afrique ?"
+            ]
+        },
+        {
+            "tag": "voix",
+            "patterns": [
+                "aucun son"
+            ],
+            "responses": [
+                "Veuillez bien vérifier que vous avez autoriser l'accès au microphone et assurez vous de parler."
+            ]
+        },
+        {
+            "tag": "aurevoir",
+            "patterns": [
+                "aurevoir",
+                "bye"
+            ],
+            "responses": [
+                "A plus tard, merci de votre visite.",
+                "Bonne journée.",
+                "Au revoir! Revenez bientôt."
+            ]
+        },
+        {
+            "tag": "remerciements",
+            "patterns": [
+                "Merci",
+                "ok",
+                "okay"
+            ],
+            "responses": [
+                "Heureux de vous aider!",
+                "Je vous en prie.",
+                "Le plaisir est pour nous."
+            ]
+        },
+        {
+            "tag": "contact",
+            "patterns": [
+                "votre numero",
+                "email",
+                "mail",
+                "votre contact ",
+                "boite postale",
+                "numero de telephone mail",
+                "boite postale mail",
+                "contacter",
+                "vous contacter",
+                "vos coordonnées"
+            ],
+            "responses": [
+                "Notre boite postale : 16BP30 Lomé-Togo. Email : <a href='mailto: agridigitale@gmail.com'>agridigitale@gmail.com</a>. Contact : (+228) 92968803/98243043"
+            ]
+        },
+        {
+            "tag": "localisation",
+            "patterns": [
+                "localisation"
+            ],
+            "responses": [
+                "Agridigitale est situé sur la route du contournement à 200 mètres après la station Total de KELEGOUGAN. Google Maps: <a href='https://bit.ly/3dbOyB6' target='_blank'>https://bit.ly/3dbOyB6</a>"
+            ]
+        },
+        {
+            "tag": "reseaux",
+            "patterns": [
+                "reseaux sociaux"
+            ],
+            "responses": [
+                "Intagram : <a href='https://bit.ly/3QA6V0k' target='_blank'>https://bit.ly/3QA6V0k</a><br>Twitter : <a href='https://bit.ly/3qnLe92' target='_blank'>https://bit.ly/3qnLe92</a><br>WhatsApp : <a href='https://bit.ly/3gNRzZW' target='_blank'>https://bit.ly/3gNRzZW</a><br>Facebook : <a href='https://bit.ly/3ez5v8U' target='_blank'>https://bit.ly/3ez5v8U</a><br>YouTube : <a href='https://bit.ly/3AXuqug' target='_blank'>https://bit.ly/3AXuqug</a>"
+            ]
+        }
+    ]
+}

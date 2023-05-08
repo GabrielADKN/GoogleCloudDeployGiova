@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chatbot Agridigitale</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/fav.png') }}"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                                <img src="{{ url_for('static', filename='images/chatbotGiova.png') }}" />
+                            </a>
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Giova, votre assistant virtuel sur Agridigitale</h4>
+                            <p class="chatbox__description--header"> En ligne</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <div class="regroupement">
+                            <input id="output" type="text" placeholder="Ecrire un message...">
+                            <button class="chatbox__send--footer send__button" id='btn_send'> Envoyer </button>
+                            <button id="start-btn" class="click_to_convert"><img alt="microphone" src="{{ url_for('static', filename='images/microphone.svg') }}" /></button>
+                        </div>
+                        <div class="dropdown">
+                            <div class="select">
+                                <span class="selected">Langue</span>
+                                <div class="caret"></div>
+                            </div>
+                            <ul class="menu">
+                                <li>Amharic</li>
+                                <li>Creole</li>
+                                <li>Hausa</li>
+                                <li>Igbo</li>
+                                <li>Kiswahili</li>
+                                <li>Malagasy</li>
+                                <li>Nyanja</li>
+                                <li>Soomaali</li>
+                                <li>Yoruba</li>
+                                <li>Zulu</li>
+                                <li class="active">Français</li>
+                                <li>English</li>
+                                <li>Portuguese</li>
+                                <li>Español</li>
+                                <li>Deutsch</li>
+                                <li>Chinese</li>
+                                <li>Arabic</li>
+                                <li>Russian</li>
+                                <li>Italiano</li>
+                                <li>Hébreux</li>
+                                <li>Japonais</li>
+                                <li>Hindi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chatbox__button">
+                        <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $SCRIPT_ROOT = {{ request.script_root|tojson }};
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+</html>

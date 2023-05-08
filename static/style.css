@@ -1,0 +1,515 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #F1F1F1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chatbox {
+    font-family: "Helvetica", "Times New Roman", 'Nunito', sans-serif;
+    /* font-weight: 0; */
+    line-height: 1.5;
+    font-size: 0.8em;
+    /* background: #F1F1F1; */
+    background: transparent;
+}
+
+*,
+html {
+    --primaryGradient: linear-gradient(93.12deg, #00642a 0.52%, #468355 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #00642a -2.14%, #468355 99.69%);
+    /* --secondaryGradient: linear-gradient(268.91deg, #41a123 -2.14%, #41a123 99.69%); */
+    --thirdyGradient: linear-gradient(268.91deg, #cccccc -2.14%, #2a2f3b 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #00642a;
+}
+
+.chatbox__messages::-webkit-scrollbar {
+    width: 7px;
+}
+
+.chatbox__messages::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.chatbox__messages::-webkit-scrollbar-thumb {
+    background-color: #00642a;
+    border-radius: 15px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background-color: #757575;
+}
+
+.menu::-webkit-scrollbar {
+    width: 7px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background-color: var(--thirdyGradient);
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 15px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background-color: #757575;
+}
+
+/* CONTENT IS CLOSE */
+.chatbox__support {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #eee;
+  z-index: -123456;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.chatbox--hide {
+  display: none;
+}
+
+/* CONTENT ISOPEN */
+.chatbox--active {
+  transform: translateY(-40px);
+  z-index: 123456;
+  opacity: 1;
+  margin-top: 2cm;
+}
+
+/* BUTTON */
+.chatbox__button {
+  text-align: right;
+  display: none;
+}
+
+.send__button {
+    padding: 6px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 0.3em;
+    transition: all 0.4s ease 0s;
+}
+
+.send__button:hover {
+    background-color: #323741;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 0.3em;
+}
+
+.send__button:active {
+    color: rgb(0, 0, 0);
+    transform: scale(0.85);
+    background-color: transparent;
+    box-shadow: #323741 0px 50px 100px -20px, #323741 0px 30px 60px -30px, #323741 0px -2px 6px 0px inset;
+}
+
+/* HEADER */
+.chatbox__header {
+    position: sticky;
+    background: orange;
+}
+
+
+/* MESSAGES */
+
+.chatbox__messages {
+    margin-top: auto;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    font-size: 1.2em;
+}
+
+.messages__item {
+    background: orange;
+    max-width: 60.6%;
+    width: fit-content;
+}
+
+.messages__item--operator {
+    margin-left: auto;
+}
+
+.messages__item--visitor {
+    margin-right: auto;
+}
+
+
+/* FOOTER */
+.chatbox__footer {
+position: sticky;
+bottom: 1;
+background: rgb(255, 0, 0);
+}
+
+/* SUPPORT */
+.chatbox__support {
+background: #f9f9f9;
+height: 90vh;
+width: 95%;
+border-radius: 20px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+
+/* HEADER */
+.chatbox__header {
+    background: var(--primaryGradient);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: var(--primaryBoxShadow);
+    height: auto;
+}
+
+.chatbox__image--header {
+    margin-right: 1em;
+}
+
+.chatbox__heading--header {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.chatbox__description--header {
+    font-size: .9rem;
+    color: #00ff80;
+}
+
+
+/* Messages */
+
+.chatbox__messages {
+    padding: 0 20px;
+}
+
+
+/*taille des box de message*/
+
+.messages__item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #E0E0E0;
+    padding: 8px 12px;
+    max-width: 87%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+
+/*box message de l'utilisateur*/
+
+.messages__item--visitor,
+.messages__item--typing {
+    margin-left: 15px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: justify;
+}
+
+.tabulation {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.messages__item--visitor img {
+    margin-top: -10px;
+    margin-left: -45px;
+}
+
+
+/*box message du bot*/
+
+.messages__item--operator {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: var(--primary);
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+
+/* FOOTER */
+.chatbox__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: var(--secondaryGradient);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.chatbox__footer input {
+    width: 90%;
+    font-size: 1.2em;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    text-align: left;
+    height: 95%;
+    background-color: transparent;
+}
+
+.chatbox__send--footer {
+    color: rgb(0, 0, 0);
+}
+
+.chatbox__button button,
+.chatbox__button button:focus,
+.chatbox__button button:visited {
+    padding: 0px;
+    background: white;
+    border: none;
+    outline: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1em;
+    height: 0px;
+    width: 0px;
+}
+
+.chatbox__button--hide {
+    display: none;
+}
+
+.click_to_convert {
+    padding: 6px 6px;
+    background: transparent;
+    margin-left: 0.3em;
+    margin: 0.3em;
+    /* background: rgb(136, 136, 136); */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.click_to_convert:hover {
+    /* background: #ff0000; */
+    padding: 6px 6px;
+    border-radius: 30px;
+    margin: 0.3em;
+    box-shadow: #323741 0px 50px 100px -20px, #323741 0px 30px 60px -30px, #323741 0px -2px 6px 0px inset;
+    transition: all 0.4s ease 0s;
+}
+
+button.click_to_convert:active {
+    color: rgb(0, 0, 0);
+    transform: scale(0.85);
+    background: transparent;
+    box-shadow: 3px 2px 25px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: #323741 0px 50px 100px -20px, #323741 0px 30px 60px -30px, #323741 0px -2px 6px 0px inset;
+}
+
+.regroupement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 3px 3px;
+    border-radius: 30px;
+    background: #fff;
+    height: 80%;
+    box-shadow: var(--primary) 0px 50px 100px -20px, var(--primary) 0px 30px 60px -30px, var(--primary) 0px -2px 6px 0px inset;
+}
+
+input:disabled {
+    background-color: #cccccc;
+}
+
+.dropdown {
+    min-width: 6em;
+    position: relative;
+    margin-left: 5px;
+    padding: 0;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: #2a2f3b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 2px #2a2f3b solid;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 5px 6px;
+    border-radius: 10px;
+}
+
+.select-clicked {
+    border: 2px #26489a;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+.select:hover {
+    background: #323741;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #fff;
+    transition: 0.3s;
+    margin: 0.3em;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #323741;
+    border: 1px #363a43 solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: #ffffff;
+    position: absolute;
+    top: 2.5em;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+    overflow-y: scroll;
+    height: 75px;
+    width: max-content;
+}
+
+.menu li {
+    padding: 0.7em 0, 5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #2a2d35;
+}
+
+.active {
+    background: #d30a0a;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+a:link {
+    color: #256b42;
+}
+
+
+/* visited link */
+a:visited {
+    color: #256b42;
+}
+
+.chatbox__heading--header {
+    font-size: 1.2em;
+}
+
+.chatbox__description--header {
+    font-size: 1em;
+}
+
+
+/* Définition des variables CSS */
+:root {
+--chatbox-height: 90vh;
+--description-font-size: 0.8em;
+--active-margin-top: 1.2cm;
+}
+
+/* Règle CSS générale pour la chatbox */
+.chatbox__support {
+height: var(--chatbox-height);
+background-color: #fff;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+}
+
+/* Media Query pour les mobiles */
+@media (max-width: 480px) {
+.chatbox__heading--header {
+font-size: 1em;
+}
+.chatbox__description--header {
+font-size: var(--description-font-size);
+}
+.chatbox--active {
+margin-top: var(--active-margin-top);
+}
+}
+
+/* Media Query pour les tablettes */
+@media (min-width: 481px) and (max-width: 1024px) {
+.chatbox__description--header {
+font-size: var(--description-font-size);
+}
+.chatbox--active {
+margin-top: var(--active-margin-top);
+}
+}
+
+/* Media Query pour les grands écrans */
+@media (min-width: 1025px) {
+.chatbox__support {
+width: 60%;
+}
+.chatbox__description--header {
+font-size: var(--description-font-size);
+}
+body {
+overflow: hidden;
+}
+}
+
+/* Media Query pour les très grands écrans */
+@media (min-width: 1281px) {
+.chatbox__support {
+width: 50%;
+}
+.chatbox__description--header {
+font-size: var(--description-font-size);
+}
+body {
+overflow: hidden;
+}
+}
