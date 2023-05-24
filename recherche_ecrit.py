@@ -136,6 +136,7 @@ def recherche_ecrit(donnee_recherche):
 def repondre_ia(question):
     # Call the OpenAI API to get the answer to the question
     openai.api_key = "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"
+    #os.environ.get(OPENAISECRET)
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="repond a la question suivante d'une facon claire et conscise avec un maximum de 70 mots : "  + question + "?",
