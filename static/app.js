@@ -359,7 +359,7 @@ class Chatbox {
 
         let lien = this.FindRoute()
 
-        lien = 'https://giova-adkn-v2.ew.r.appspot.com/predict' + lien
+        lien = 'https://giova-gabriel-adkn.onrender.com/predict' + lien
 
         fetch(lien, {
                 method: 'POST',
@@ -485,7 +485,7 @@ class Chatbox {
 
         let lien = this.FindRoute()
 
-        lien = 'https://giova-adkn-v2.ew.r.appspot.com/predict' + lien
+        lien = 'https://giova-gabriel-adkn.onrender.com/predict' + lien
         console.log(lien)
 
         fetch(lien, {
@@ -513,7 +513,7 @@ class Chatbox {
     onStart(chatbox) {
         var textField = chatbox.querySelector('input');
         let text1 = ""
-        fetch('https://giova-adkn-v2.ew.r.appspot.com/start', {
+        fetch('https://giova-gabriel-adkn.onrender.com/start', {
                 method: 'POST',
                 body: JSON.stringify({ message: text1 }),
                 mode: 'cors',
